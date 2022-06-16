@@ -1,0 +1,19 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_employee_user","Access Employee for User Sales","model_gaji_employee","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_employee_admin","Access Employee for Admin","model_gaji_employee","sales_team.group_sale_manager",1,1,1,1
+"access_department_user","Access Department for User Sales","model_gaji_department","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_department_admin","Access Department for Admin","model_gaji_department","sales_team.group_sale_manager",1,1,1,1
+"access_cuti_user","Access Cuti for User Sales","model_gaji_cuti","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_cuti_admin","Access Cuti for Admin","model_gaji_cuti","sales_team.group_sale_manager",1,1,1,1
+"access_pinjaman_user","Access Pinjaman for User Sales","model_gaji_pinjaman","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_pinjaman_admin","Access Pinjaman for Admin","model_gaji_pinjaman","sales_team.group_sale_manager",1,1,1,1
+"access_absen_user","Access Absen for User Sales","model_gaji_absen","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_absen_admin","Access Absen for Admin","model_gaji_absen","sales_team.group_sale_manager",1,1,1,1
+"access_gaji_user","Access Gaji for User Sales","model_gaji_gaji","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_gaji_admin","Access Gaji for Admin","model_gaji_gaji","sales_team.group_sale_manager",1,1,1,1
+"access_employee_lines_user","Access Employee lines for User Sales","model_gaji_employee_lines","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_employee_lines_admin","Access employee lines for Admin","model_gaji_employee_lines","sales_team.group_sale_manager",1,1,1,1
+"access_wiz_employee_pinjaman_user","Access wizemployee for User Sales","model_wiz_employee_pinjaman","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_wiz_employee_pinjaman_admin","Access wizemployee for Admin","model_wiz_employee_pinjaman","sales_team.group_sale_manager",1,1,1,1
+"access_wiz_employee_pinjaman_lines_user","Access wizemployee for User Sales","model_wiz_employee_pinjaman_lines","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_wiz_employee_pinjaman_lines_admin","Access wizemployee for Admin","model_wiz_employee_pinjaman_lines","sales_team.group_sale_manager",1,1,1,1

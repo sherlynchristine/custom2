@@ -1,0 +1,82 @@
+<odoo>
+    <record id="pinjaman_view_form" model="ir.ui.view">
+        <field name="name">pinjaman.view.form</field>
+        <field name="model">gaji.pinjaman</field>
+        <field name="arch" type="xml">
+            <form string="Pinjaman form">
+                <header>
+                    <button name="action_submitted" string="Submitted" states="draft" type="object" class="btn-primary"/>
+                    <button name="action_settodraft" string="Set to Draft" states="canceled" type="object" class="btn-primary"/>
+                    <button name="action_approve" string="Approve" states="submitted" type="object" class="btn-primary"/>
+                    <button name="action_rejected" string="Reject" states="submitted" type="object" class="btn-warning"/>
+                    <button name="action_canceled" string="Cancel" states="approve" type="object"
+                            class="btn-primary"/>
+                    <!-- diatur visibility supaya hanya manager yg bs cancel -->
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submitted,approve,rejected"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="emp_ids"/>
+                            <field name="emp_nama"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="nominal"/>
+                            <field name="keterangan"/>
+                            <!-- <field name="status" widget="radio"/> -->
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pinjaman_view_list" model="ir.ui.view">
+        <field name="name">pinjaman.view.list</field>
+        <field name="model">gaji.pinjaman</field>
+        <field name="arch" type="xml">
+            <tree string="Pinjaman list">
+                <field name="name"/>
+                <field name="emp_ids"/>
+                <field name="emp_nama"/>
+                <field name="date"/>
+                <field name="nominal"/>
+                <field name="keterangan"/>
+                <!-- <field name="status"/> -->
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="pinjaman_view_search" model="ir.ui.view">
+        <field name="name">pinjaman.view.search</field>
+        <field name="model">gaji.pinjaman</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="emp_ids"/>
+                <field name="emp_nama"/>
+                <field name="date"/>
+                <field name="nominal"/>
+                <field name="keterangan"/>
+                <!-- <field name="status"/> -->
+                <field name="state"/>
+                <filter string="Draft" name="draft_filter" domain="[('state', '=', 'draft')]"/>
+                <filter string="Done" name="done_filter" domain="[('state', '=', 'done')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="pinjaman_action" model="ir.actions.act_window">
+        <field name="name">Pinjaman</field>
+        <field name="res_model">gaji.pinjaman</field>
+        <field name="view_id" ref="pinjaman_view_list"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="pinjaman_menu" parent="gaji.gaji_menu" name="Pinjaman" action="pinjaman_action" sequence="10"/>
+
+</odoo>

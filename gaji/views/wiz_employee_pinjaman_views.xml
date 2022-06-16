@@ -1,0 +1,33 @@
+<odoo>
+    <record id="wiz_employee_view_form" model="ir.ui.view">
+        <field name="name">wiz.employee.view.form</field>
+        <field name="model">wiz.employee.pinjaman</field>
+        <field name="arch" type="xml">
+            <form string="Employee Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="employee_name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Pinjaman" name="employee_pinjaman">
+                            <field name="line_ids">
+                                <tree create="0" delete="0" editable="bottom">
+                                    <field name="pinjaman_id" readonly="1"/>
+                                    <field name="ref_employee_lines_id" invisible="1"/>
+                                    <field name="status"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                 <footer>
+                        <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" data-hotkey="c"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                 </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
