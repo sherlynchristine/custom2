@@ -33,7 +33,7 @@ class absen(models.Model):
     def _compute_keterangan(self):
         import datetime
         dt = fields.Datetime.from_string(self.date).time().hour + 8
-        jam = fields.Datetime.from_string('2023-01-01 21:00:21').time().hour
+        jam = fields.Datetime.from_string('2023-01-01 14:00:14').time().hour
         dt_hrs = abs(dt - jam)
         #self.keterangan = (dt + jam) + dt_hrs
         if dt_hrs == 1 or dt_hrs == 0:
@@ -47,7 +47,7 @@ class absen(models.Model):
     def _compute_keterangan2(self):
         self.date2 = fields.Datetime.now()
         if self.keterangan != 'Absen':
-            jam = fields.Datetime.from_string('2023-01-01 22:00:22').time().hour
+            jam = fields.Datetime.from_string('2023-01-01 18:00:18').time().hour
             dt = self.date2.hour + 8
             if dt > jam:
                 self.keterangan2 = 'Lembur'
