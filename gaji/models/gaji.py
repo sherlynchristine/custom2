@@ -56,7 +56,7 @@ class gaji(models.Model):
         self.sub1 = self.gaji_pokok + self.bonus + self.totalterlambat + self.totalabsen
         if self.pinjaman_ > 0:
             self.sub2 = self.sub1 - self.pinjaman_
-        self.total = self.sub1 + self.sub2
+        self.total = self.sub2
 
     @api.depends('emp_ids.name', 'periode', 'tahun')
     def _compute_name(self):
